@@ -9,7 +9,7 @@ public class Game_Test {
     Game game;
     
     @Before
-    public void setUp(){
+    public void setUp() throws Exception{
         game = new Game(new I_UI_Impl());
     }
     

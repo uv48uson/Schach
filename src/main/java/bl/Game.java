@@ -19,7 +19,7 @@ public class Game {
 	Board board;
 	Player[] players = new Player[2];
 	
-	public Game(I_UI ui){
+	public Game(I_UI ui) throws Exception{
 	    this.ui = ui;
 	    Board board = new OverAllBoard();
 	    score = new Scoreboard(board);
@@ -27,7 +27,8 @@ public class Game {
 	    Collection<Chessman> whiteChessmen = new ArrayList<Chessman>();
 	    Collection<Chessman> blackChessmen = new ArrayList<Chessman>();
 	    
-	    ChessmenInitialisator.initializeNormalGame(blackChessmen, whiteChessmen, board);
+	    
+        ChessmenInitialisator.initializeNormalGame(blackChessmen, whiteChessmen, board);
 	    
 	    players[0] = new Person(whiteChessmen, board);
 	    players[1] = new KI(blackChessmen, board);
@@ -59,4 +60,8 @@ public class Game {
 	    
 	    
 	}
+
+    public Board getBoard() {
+        return board;
+    }
 }

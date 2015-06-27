@@ -17,13 +17,13 @@ import bl.dataElements.Rook;
 
 public class ChessmenInitialisator {
     
-    public static void initializeNormalGame(Collection<Chessman> blackChessmen, Collection<Chessman> whiteChessmen, Board board){
+    public static void initializeNormalGame(Collection<Chessman> blackChessmen, Collection<Chessman> whiteChessmen, Board board) throws PositionOffBoardException{
         
         blackChessmen = initializeBlackChessmen(board);
         whiteChessmen = initializeWhiteChessmen(board);
     }
 
-    private static Collection<Chessman> initializeWhiteChessmen(Board board) {
+    private static Collection<Chessman> initializeWhiteChessmen(Board board) throws PositionOffBoardException {
         Collection<Chessman> chessmen = new ArrayList<Chessman>();
         
         addChessman(new Position(0,0,1), new Rook(Chessman.Color.White), chessmen, board);
@@ -52,26 +52,26 @@ public class ChessmenInitialisator {
         board.setChessman(position, chessman);
     }
     
-    private static Collection<Chessman> initializeBlackChessmen(Board board) {
+    private static Collection<Chessman> initializeBlackChessmen(Board board) throws PositionOffBoardException {
         Collection<Chessman> chessmen = new ArrayList<Chessman>();
         
-        addChessman(new Position(0,9,4), new Rook(Chessman.Color.Black), chessmen, board);
-        addChessman(new Position(1,9,4), new Queen(Chessman.Color.Black), chessmen, board);
-        addChessman(new Position(1,8,3), new Kight(Chessman.Color.Black), chessmen, board);
-        addChessman(new Position(2,8,3), new Bishop(Chessman.Color.Black), chessmen, board);
-        addChessman(new Position(3,8,3), new Bishop(Chessman.Color.Black), chessmen, board);
-        addChessman(new Position(4,8,3), new Kight(Chessman.Color.Black), chessmen, board);
-        addChessman(new Position(4,9,4), new King(Chessman.Color.Black), chessmen, board);
-        addChessman(new Position(5,9,4), new Rook(Chessman.Color.Black), chessmen, board);
+        addChessman(new Position(0,9,3), new Rook(Chessman.Color.Black), chessmen, board);
+        addChessman(new Position(1,9,3), new Queen(Chessman.Color.Black), chessmen, board);
+        addChessman(new Position(1,8,2), new Kight(Chessman.Color.Black), chessmen, board);
+        addChessman(new Position(2,8,2), new Bishop(Chessman.Color.Black), chessmen, board);
+        addChessman(new Position(3,8,2), new Bishop(Chessman.Color.Black), chessmen, board);
+        addChessman(new Position(4,8,2), new Kight(Chessman.Color.Black), chessmen, board);
+        addChessman(new Position(4,9,3), new King(Chessman.Color.Black), chessmen, board);
+        addChessman(new Position(5,9,3), new Rook(Chessman.Color.Black), chessmen, board);
         
-        addChessman(new Position(0,8,4), new Pawn(Chessman.Color.Black), chessmen, board);
-        addChessman(new Position(1,8,4), new Pawn(Chessman.Color.Black), chessmen, board);
-        addChessman(new Position(1,7,3), new Pawn(Chessman.Color.Black), chessmen, board);
-        addChessman(new Position(2,7,3), new Pawn(Chessman.Color.Black), chessmen, board);
-        addChessman(new Position(3,7,3), new Pawn(Chessman.Color.Black), chessmen, board);
-        addChessman(new Position(4,7,3), new Pawn(Chessman.Color.Black), chessmen, board);
-        addChessman(new Position(4,8,4), new Pawn(Chessman.Color.Black), chessmen, board);
-        addChessman(new Position(5,8,4), new Pawn(Chessman.Color.Black), chessmen, board);
+        addChessman(new Position(0,8,3), new Pawn(Chessman.Color.Black), chessmen, board);
+        addChessman(new Position(1,8,3), new Pawn(Chessman.Color.Black), chessmen, board);
+        addChessman(new Position(1,7,2), new Pawn(Chessman.Color.Black), chessmen, board);
+        addChessman(new Position(2,7,2), new Pawn(Chessman.Color.Black), chessmen, board);
+        addChessman(new Position(3,7,2), new Pawn(Chessman.Color.Black), chessmen, board);
+        addChessman(new Position(4,7,2), new Pawn(Chessman.Color.Black), chessmen, board);
+        addChessman(new Position(4,8,3), new Pawn(Chessman.Color.Black), chessmen, board);
+        addChessman(new Position(5,8,3), new Pawn(Chessman.Color.Black), chessmen, board);
         
         return chessmen;
     }
