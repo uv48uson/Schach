@@ -4,7 +4,8 @@ import bl.Player;
 
 public class I_UI_Impl implements I_UI {
 
-    public void announceWinner(Player player) {
+    @Override
+	public void announceWinner(Player player) {
         // TODO Auto-generated method stub
         
     }

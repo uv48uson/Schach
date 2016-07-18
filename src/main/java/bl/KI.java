@@ -6,8 +6,10 @@ import bl.dataElements.Board;
 import bl.dataElements.Chessman;
 
 public class KI extends Player {
+    Scoreboard score;
     
-    public KI(Collection<Chessman> chessmen, Board board){
+    public KI(Collection<Chessman> chessmen, Board board, Scoreboard score){
         super(chessmen, board);
+        this.score = score;
     }
 }

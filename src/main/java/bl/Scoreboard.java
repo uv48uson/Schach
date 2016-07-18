@@ -3,10 +3,12 @@ package bl;
 import bl.dataElements.Board;
 
 public class Scoreboard {
+    Player[] players;
     Board board;
 
-	public Scoreboard(Board board) {
-        this.board = board;
+	public Scoreboard(Player[] players, Board board) {
+	    this.players = players;
+	    this.board = board;
     }
 
     /**
